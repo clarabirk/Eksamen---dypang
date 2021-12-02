@@ -12,6 +12,7 @@ for (const menuItem of menuItems) {
     })
 }
 
+/* ----- Billede slider til forsiden ------ */
 
 var root = document.querySelector('.SimpleSlider');
 var slides = root.querySelectorAll(':not(:first-child)');
@@ -26,6 +27,7 @@ setInterval(function() {
     root.querySelector(':nth-child(2)').classList.remove('is-hidden');
 }, 4000)
 
+/* ----- Arrangementer filter ------ */
 
     function filter(input) {
         var array = [];
@@ -50,13 +52,20 @@ setInterval(function() {
         
         }
 
+
+/* ----- Data tæller ------ */
+
+function myFunction() { 
+  
         const counters = document.querySelectorAll('.value');
-const speed = 200;
+const speed = 700;
 
 counters.forEach( counter => {
    const animate = () => {
       const value = +counter.getAttribute('akhi');
-      const data = +counter.innerText;
+      const data = +counter.innerText; 
+      
+      
      
       const time = value / speed;
      if(data < value) {
@@ -64,12 +73,14 @@ counters.forEach( counter => {
           setTimeout(animate, 1);
         }else{
           counter.innerText = value;
-        }
-     
+        } 
    }
-   
    animate();
 });
+} 
+
+
+
 
 
 
