@@ -16,6 +16,17 @@ body {
   background-color: white;
 }
 
+li {
+  list-style: none;
+}
+
+li a {
+  text-decoration: none;
+}
+
+/* ---------- grid container styling ---------- */
+
+
 h1 {
   font-size: 2em;
   font-weight: 500;
@@ -24,7 +35,7 @@ h1 {
 
 .logo {
   position: absolute;
-  left: 0px;
+  left: 0;
   top: 0;
 }
 
@@ -72,7 +83,7 @@ h1 {
   position: absolute;
   display: inline-block;
   font-style: normal;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   padding: 10px 5px;
 }
 
@@ -85,7 +96,7 @@ h1 {
 }
 
 .active_menuitem {
-  border-radius: 5px;
+  border-radius: 10px;
   border: solid 2px #d6cece;
 }
 
@@ -154,8 +165,8 @@ h1 {
 
 .tekstboks1 {
   margin-top: 380px;
-  margin-left: 130px;
-  margin-right: 130px;
+  margin-left: 180px;
+  margin-right: 180px;
 }
 
 /* --------- Grid boks ---------- */
@@ -196,6 +207,18 @@ h1 {
   margin-top: 7px;
 }
 
+.btn-klima {
+  background-color: #d6cece;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+}
+
 /* ----- Slideshow --------*/
 
 @-webkit-keyframes scroll {
@@ -225,6 +248,7 @@ h1 {
   position: relative;
   width: 100%;
 }
+
 .slider::before,
 .slider::after {
   background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
@@ -234,21 +258,25 @@ h1 {
   width: 200px;
   z-index: 2;
 }
+
 .slider::after {
   right: 0;
   top: 0;
   transform: rotateZ(180deg);
 }
+
 .slider::before {
   left: 0;
   top: 0;
 }
+
 .slider .slide-track {
   -webkit-animation: scroll 40s linear infinite;
   animation: scroll 40s linear infinite;
   display: flex;
   width: calc(250px * 14);
 }
+
 .slider .slide {
   height: 100px;
   width: 250px;
@@ -259,6 +287,10 @@ h1 {
 }
 
 /* --------- Arrangementer  ---------- */
+
+.overskrift_arrangementer {
+  font-family: "PT Serif", serif;
+}
 
 .arrangement__container1 {
   margin-left: -12.5%;
@@ -287,6 +319,7 @@ h1 {
 .data {
   height: 300px;
   width: 360px;
+  object-fit: cover;
 }
 
 .arrangement_knap {
@@ -320,6 +353,7 @@ h1 {
   margin-bottom: 20px;
   width: 10%;
   font-family: "PT Serif", serif;
+  transition: 200ms;
 }
 
 button:hover {
@@ -327,64 +361,63 @@ button:hover {
   color: white;
 }
 
-button:active {
-  background: lightgray;
-}
-
 /* ------ TILBYDER ------- */
-
 .container3 {
   margin-top: 100px;
   margin-bottom: 100px;
   display: grid;
   grid-template-columns: 400px 400px;
-  grid-template-rows: 300px 300px 300px;
+  grid-template-rows: 300px 450px 300px;
   grid-auto-columns: 1fr;
   gap: 100px 200px;
   grid-auto-flow: row;
   justify-content: center;
+  text-align: center;
   grid-template-areas:
     "img1 tekst1"
     "tekst2 img2"
     "img3 tekst3";
 }
 
-.img1 {
-  grid-area: img1;
+
+.img1 { grid-area: img1;
 }
 
-.tekst1 {
-  grid-area: tekst1;
-  margin-top: 100px;
+.billede1 {
+  width: 120%;
 }
 
-.tekst2 {
-  grid-area: tekst2;
-  margin-top: 100px;
+.billede3 {
+  width: 120%;
 }
 
-.img2 {
-  grid-area: img2;
+.billede4 {
+  width: 120%;
 }
 
-.img3 {
-  grid-area: img3;
+.tekst1 { grid-area: tekst1;
+margin-right: auto;
+margin-left: auto;
+text-align: center;
+margin-top: 100px;
 }
 
-.tekst3 {
-  grid-area: tekst3;
-  margin-top: 100px;
-}
+.tekst2 { grid-area: tekst2; 
+  margin-top: 200px;}
 
-.overskrift_tilbyder {
-  margin-top: 50px;
-}
+.img2 { grid-area: img2; 
+margin-top: 100px;}
+
+.img3 { grid-area: img3; }
+
+.tekst3 { grid-area: tekst3;
+  margin-top: 100px; }
 
 .img1:hover {
   -webkit-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
 }
@@ -392,8 +425,8 @@ button:active {
 .img2:hover {
   -webkit-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
 }
@@ -401,11 +434,45 @@ button:active {
 .img3:hover {
   -webkit-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
 }
+
+
+/* ----- Mapbox ------ */ 
+  .main_map  {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-bottom: 24px;
+  }
+  .main_map #map {
+    height: 70vh;
+  }
+  .main_map #map .marker {
+    background-image: url("../img/mapbox.png");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .main_map #map .mapboxgl-popup {
+    max-width: 200px;
+  }
+  .main_map #map .mapboxgl-popup-content {
+    text-align: center;
+    color: black;
+  }
+
+  .tekst_map {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  
 
 /* ---- Om os ------ */
 
@@ -420,28 +487,71 @@ button:active {
   margin-top: 80px;
 }
 
-.content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #030303;
-  height: 30vh;
-  margin-top: 50px;
-}
-
-.value {
-  font-size: 50px;
-  display: block;
-  font-weight: bold;
-  font-family: PT serif;
-  color: #fff;
-}
-
 .projekter {
   font-size: 20px;
   color: white;
   background-color: grey;
 }
+
+.containerom {
+	max-width: 1100px;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+header {
+	flex: 1;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+header h1 {
+	font-size: 60px;
+}
+
+.counters {
+	padding: 40px 20px;
+  width: 115%;
+}
+
+.counters .containerom {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 30px;
+	text-align: center;
+}
+
+.counters i {
+	margin-bottom: 5px;
+}
+
+.counters .counter {
+	font-size: 45px;
+	margin: 10px 0;
+}
+
+.containerjeps {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  
+  gap: 0px 100px;
+  grid-auto-flow: row;
+  justify-content: center;
+  grid-template-areas:
+    "jeps1 jeps2 jeps3";
+}
+
+.jeps1 { grid-area: jeps1; }
+
+.jeps2 { grid-area: jeps2; }
+
+.jeps3 { grid-area: jeps3; }
+
+
 
 /* ------ Booking ------ */
 
@@ -454,6 +564,10 @@ textarea:valid ~ label {
   top: -5px;
   -webkit-transition: all 0.225s ease;
   transition: all 0.225s ease;
+}
+
+.row {
+  width: 103%;
 }
 
 .styled-input {
@@ -520,32 +634,17 @@ textarea {
 }
 
 .input-container {
-  margin-right: 350px;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
 }
 
-.submit-btn {
+.knappi {
   padding: 7px 35px;
   border-radius: 60px;
-  display: inline-block;
   background-color: #d6cece;
-  color: black;
   font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 10px 0 rgba(0, 0, 0, 0.07);
-  -webkit-transition: all 300ms ease;
-  transition: all 300ms ease;
-  margin-bottom: 100px;
-}
-
-.submit-btn:hover {
-  transform: translateY(1px);
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.09);
-}
-
-.submit-btn {
-  width: 100%;
-  float: none;
-  text-align: center;
+  margin-bottom: 20px;
 }
 
 input[type="checkbox"] + label {
@@ -558,113 +657,6 @@ input[type="checkbox"]:checked + label {
   font-style: normal;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
-
-section#counter-stats {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-}
-
-.stats {
-  text-align: center;
-  font-size: 35px;
-  font-weight: 700;
-  font-family: "Montserrat", sans-serif;
-}
-
-.stats .fa {
-  color: #008080;
-  font-size: 60px;
-}
-
-/* ----- Page footer ----- */
-
-.page_footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  text-align: center;
-  border-top: 1px solid white;
-  padding-top: 20px;
-  padding: 10px;
-  color: black;
-  font-family: "PT Serif", serif;
-  background-color: white;
-  opacity: 85%;
-}
-
-.footer_card_heading {
-  margin-bottom: 5px;
-  font-size: 25px;
-  text-align: center;
-}
-
-.address {
-  font-size: 10px;
-  margin-top: -15px;
-}
-
-.footer_card:first-child .footer_card_heading {
-  margin-bottom: 5px;
-}
-
-.some_image {
-  width: 40px;
-  margin: 10px;
-}
-
-@media only screen and (max-width: 700px) {
-  .cta_style {
-    background-color: lightgray;
-    color: white;
-    border-radius: 10px;
-    color: black;
-  }
-
-  .mobileiconlabel,
-  .mobileicon {
-    color: black;
-    margin-right: 10px;
-  }
-
-  .logo img {
-    position: absolute;
-    max-width: 200px;
-  }
-
-  /* ------ Slides første side ------ */
-  .SimpleSlider {
-    position: relative;
-    height: 100px;
-    width: 100%;
-    outline: 1px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 100px;
-  }
-
-  .SimpleSlider IMG {
-    position: absolute;
-    opacity: 1;
-    -webkit-transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -ms-transition: opacity 1s;
-    -o-transition: opacity 1s;
-    transition: opacity 1s;
-  }
-
-  .SimpleSlider IMG.is-hidden {
-    opacity: 0;
-  }
-
-  .billede2 {
-    width: 95%;
-    height: 200px;
-  }
-}
 
 /* ----- Page footer ----- */
 
@@ -716,9 +708,423 @@ section#counter-stats {
   margin-left: -10px;
 }
 
-.mobil {
-  display: none;
+/* ----- Mobil version ----- */
+
+@media only screen and (max-width: 700px) {
+  .cta_style {
+    background-color: lightgray;
+    color: white;
+    border-radius: 10px;
+    color: black;
+  }
+
+  .knappi {
+    margin-left: 50px;
+  }
+
+  .mobileiconlabel,
+  .mobileicon {
+    color: black;
+    margin-right: 10px;
+    margin-top: -25px;
+  }
+ 
+
+  .logo {
+    position: absolute;
+    max-width: 180px;
+    top: -20px;
+   
+  }
+
+  /* ------ Slides første side ------ */
+  .SimpleSlider {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    outline: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+  }
+
+  .SimpleSlider IMG {
+    position: absolute;
+    opacity: 1;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+  }
+
+  .SimpleSlider IMG.is-hidden {
+    opacity: 0;
+  }
+
+  .billede2 {
+    width: 95%;
+    height: 200px;
+  }
+  
+  /* -------- Tekstboks forside ------ */
+
+.tekstboks1 {
+  margin-top: 80px;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-family: "PT Serif", serif;
 }
+
+/* --------- Grid boks ---------- */
+
+.grid-container {
+  display: grid;
+  max-width: 90%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: 315px;
+  grid-template-rows: 280px 280px 280px 280px ;
+  gap: 0px 0px;
+  font-family: "PT Serif", serif;
+  text-align: center;
+  justify-content: space-evenly;
+  background-color: #d6cece;
+  margin-bottom: 40px;
+  grid-template-areas:
+    "box1"
+    "box2"
+    "box3" 
+    "box5";
+}
+
+.box1 {
+  grid-area: box1;
+  margin-top: 25px;
+}
+
+.box2 {
+  grid-area: box2;
+  margin-top: -10px;
+}
+
+.box3 {
+  grid-area: box3;
+}
+
+.box5 {
+  grid-area: box5;
+  margin-bottom: 200px;
+}
+
+/* ---- Slider forside ----- */ 
+.slider {
+  background: #d6cece;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 160px;
+  margin: auto;
+  margin-top: 80px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 40%);
+  content: "";
+  height: 160px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider .slide-track {
+  -webkit-animation: scroll 40s linear infinite;
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+
+.slider .slide {
+  height: 100px;
+  width: 250px;
+}
+
+.slide {
+  margin-top: 30px;
+}
+
+/* ----- Arrangementer ------ */
+.overskrift_arrangementer {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "PT Serif", serif;
+}
+
+.arrangement__container1 {
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: 5rem;
+  padding-top: 1em;
+  flex-direction: column;
+  background-color: white;
+  font-family: "PT Serif", serif;
+}
+
+.grid-container1 {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-top: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  font-family: "PT Serif", serif;
+}
+
+.data {
+  max-width: 101.5%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.button {
+  border: 1px solid #d6cece;
+  background-color: #d6cece;
+  padding: 20px;
+  font-size: 18px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 40%;
+  font-family: "PT Serif", serif;
+  margin-bottom: 30px;
+}
+
+/* ------ TILBYDER ------- */
+
+.container3 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: 350px;
+  grid-template-rows: 50px 190px 40px 320px 50px 250px;
+  grid-auto-columns: 1fr;
+  gap: 70px 50px;
+  font-family: "PT Serif", serif;
+  justify-content: center;
+  text-align: center;
+  grid-template-areas:
+    "img1" 
+    "tekst1"
+    "img2"
+    "tekst2"
+    "img3" 
+    "tekst3";
+}
+.billede1 {
+  width: 80%;
+}
+
+.billede3 {
+  width: 80%;
+}
+
+.billede4 {
+  width: 80%;
+}
+.tekst1 {
+  width: 80%;
+}
+
+.tekst2 {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  font-family: "PT Serif", serif;
+}
+
+.tekst3 {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  font-family: "PT Serif", serif;
+}
+
+/* ------ Booking ------ */
+
+.container {
+  margin-top: 50px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "PT Serif", serif;
+}
+
+.input-container {
+  max-width: 82%;
+  float: left;
+}
+
+.submit-btn {
+  max-width: 97%;
+}
+
+/* ------ Om os ------ */
+.tekst_omos {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "PT Serif", serif;
+}
+
+.tekst_omos2 {
+  background-color: #d6cece;
+  padding: 20px;
+  margin-top: 20px;
+  font-family: "PT Serif", serif;
+}
+
+.containerom {
+	max-width: 1100px;
+	overflow: auto;
+}
+
+header {
+	flex: 1;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  font-family: "PT Serif", serif;
+}
+
+header h1 {
+	font-size: 60px;
+}
+
+.counters {
+	padding: 60px;
+  width: 100%;  
+}
+
+.counters .containerom {
+	display: block;
+  grid-template-rows: repeat(4, 1fr);
+	grid-gap: 30px;
+  margin-right: 110px;
+}
+
+.counters i {
+	margin-bottom: 5px;
+}
+
+.counters .counter {
+	font-size: 45px;
+}
+
+.grid-container20 {
+  display: grid;
+  max-width: 90%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: 315px;
+  grid-template-rows: 280px 280px 280px 280px ;
+  gap: 0px 0px;
+  text-align: center;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+  font-family: "PT Serif", serif;
+  grid-template-areas:
+    "box6" 
+    "box7"
+    "box8" 
+    "box9";
+}
+
+.box6 {
+  grid-area: box1;
+  margin-top: 25px;
+}
+
+.box7 {
+  grid-area: box2;
+  margin-top: -10px;
+}
+
+.box8 {
+  grid-area: box3;
+}
+
+.box9 {
+  grid-area: box5;
+  margin-bottom: 200px;
+}
+
+/* ----- Page footer ----- */
+
+.page_footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_card {
+  margin-right: auto;
+  margin-left: 15px;
+  justify-content: center;
+}
+
+.containerjeps {
+  display: grid;
+  grid-template-columns: 300px ;
+  grid-template-rows: 300px 130px;
+  gap: 250px 0px;
+  grid-auto-flow: row;
+  justify-content: center;
+  grid-template-areas:
+    "jeps1"
+    "jeps2"
+    "jeps3";
+}
+
+.jeps1 { grid-area: jeps1; }
+
+.jeps2 { grid-area: jeps2; }
+
+.jeps3 { grid-area: jeps3; }
+
+}
+
+.klimaovers {
+  font-size: 1.7rem;
+}
+
+
 
 @media only screen and (min-width: 768px) {
   .mobileiconlabel,
@@ -747,10 +1153,6 @@ section#counter-stats {
     margin-left: 2em;
     padding: 10px;
   }
-
-  .menuitem:hover {
-    background-color: #d6cece;
-    color: white;
-    border-radius: 6px;
-  }
+  
+  
 }
